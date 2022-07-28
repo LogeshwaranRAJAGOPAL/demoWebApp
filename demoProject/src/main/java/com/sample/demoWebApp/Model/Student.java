@@ -18,14 +18,17 @@ public class Student {
 
     String grade;
 
+    double salary;
+
     String gender;
 
     public Student() {
     }
 
-    public Student(String name, String grade, String gender) {
+    public Student(String name, String grade, double salary,String gender) {
         this.name = name;
         this.grade = grade;
+        this.salary = salary;
         this.gender = gender;
     }
 
@@ -51,6 +54,14 @@ public class Student {
 
     public void setGrade(String grade) {
         this.grade = grade;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
     }
 
     public String getGender() {
