@@ -28,6 +28,7 @@ jobs:
         run: mvn -f demoWebApp/demoProject/pom.xml
 
     - name: Build with Maven
+      working-directory: C:\Users\1932623\IdeaProjects\demoProject 
       run: mvn -B package --file pom.xml
 
     - name: Publish to GitHub Packages Apache Maven
