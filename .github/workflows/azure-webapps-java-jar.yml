@@ -48,7 +48,7 @@ jobs:
           cache: 'maven'
 
       - name: Build with Maven
-        run: mvn clean install
+        run: mvn -B package --file demoProject/pom.xml clean install
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
