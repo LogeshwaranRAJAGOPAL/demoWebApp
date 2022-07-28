@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 
 @Controller
@@ -41,16 +42,19 @@ public class controller {
         return "redirect:/";
     }
 
-    @RequestMapping("/edit")
-    public String edit(Student student)
+    @RequestMapping("/edit/{id}")
+    public ModelAndView edit(@PathVariable String id)
     {
-        return "edit";
+        Student student=repo.findById(id).get();
+        ModelAndView mv=new ModelAndView("edit");
+        mv.addObject("student",student);
+
+        return mv;
     }
 
-    @PostMapping("/edit/{id}")
-    public String updateStudent(@PathVariable("id") String id,Model model)
+    @PostMapping("/edit")
+    public String updateStudent(@ModelAttribute ("student") Student student)
     {
-        Student student = repo.findById(id).get();
         repo.save(student);
         return "redirect:/";
     }

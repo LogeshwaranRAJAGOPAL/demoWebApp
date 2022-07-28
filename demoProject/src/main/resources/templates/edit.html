@@ -21,16 +21,22 @@
     </header>
 </div>
 <div>
-    <form  action="#"  th:action="@{'/edit/' + ${student.id}}" th:object="${student}" method="post">
+    <form  action="#"  th:action="@{/edit}" th:object="${student}" method="post">
+        <input type="hidden" th:field="${student.id}" />
         <div class="input-group mb-3">
             <label for="name">Name</label>
-            <input class="form-control" type="text" th:field="*{name}" id="name" placeholder="name(name=${student.name})" th:value="${student.id}">
+            <input class="form-control" type="text" th:field="*{name}" id="name" placeholder="${student.name}" th:value="${student.id}">
             <!--span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span-->
         </div>
         <br>
         <div class="input-group mb-3">
             <label for="grade">Grade</label>
             <input class="form-control" type="text" th:field="*{grade}" id="grade" placeholder="grade" th:value="${student.grade}">
+            <!--span th:if="${#fields.hasErrors('grade')}" th:errors="*{grade}"></span-->
+        </div>
+        <div class="input-group mb-3">
+            <label for="salary">Salary</label>
+            <input class="form-control" type="text" th:field="*{salary}" id="salary" placeholder="salary" th:value="${student.salary}">
             <!--span th:if="${#fields.hasErrors('grade')}" th:errors="*{grade}"></span-->
         </div>
         <br>

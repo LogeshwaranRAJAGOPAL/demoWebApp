@@ -24,6 +24,7 @@
                 <tr>
                     <th>Name</th>
                     <th>Grade</th>
+                    <th>Salary</th>
                     <th>Gender</th>
                     <th>Action</th>
                 </tr>
@@ -32,9 +33,10 @@
                 <tr th:each="student : ${students}">
                     <td th:text="${student.name}">Logesh</td>
                     <td th:text="${student.grade}">10th</td>
-                    <td th:text="${student.gender}">Male</td>
+                    <td th:text="${student.salary}">Male</td>
+                    <td th:text="${student.gender}"></td>
                     <td>
-                        <a th:href="@{/edit}" class="btn btn-primary">Edit</a>
+                        <a th:href="@{'/edit/'+${student.id}}" class="btn btn-primary">Edit</a>
                         <form th:action="@{/delete}" action="#" onsubmit="return confirm('Are you sure you want to delete!')">
                             <input type="hidden" name="id" th:value="${student.id}" />
                             <button style="width: 70px" type="submit" class="btn btn-danger">Delete</button>
