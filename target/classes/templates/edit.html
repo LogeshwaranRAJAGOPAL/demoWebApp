@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="default">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Entry System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+          crossorigin="anonymous">
+    <link rel="icon" type="image/x-icon" href="data:image/png;base64,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">
+
+</head>
+<body>
+<div>
+    <header class="navbar bg-success text-secondary">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">Student Management System</span>
+        </div>
+    </header>
+</div>
+<div>
+    <form  action="#"  th:action="@{/edit}" th:object="${student}" method="post">
+        <input type="hidden" th:field="${student.id}" />
+        <div class="input-group mb-3">
+            <label for="name">Name</label>
+            <input class="form-control" type="text" th:field="*{name}" id="name" placeholder="${student.name}" th:value="${student.id}">
+            <!--span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span-->
+        </div>
+        <br>
+        <div class="input-group mb-3">
+            <label for="grade">Grade</label>
+            <input class="form-control" type="text" th:field="*{grade}" id="grade" placeholder="grade" th:value="${student.grade}">
+            <!--span th:if="${#fields.hasErrors('grade')}" th:errors="*{grade}"></span-->
+        </div>
+        <div class="input-group mb-3">
+            <label for="salary">Salary</label>
+            <input class="form-control" type="text" th:field="*{salary}" id="salary" placeholder="salary" th:value="${student.salary}">
+            <!--span th:if="${#fields.hasErrors('grade')}" th:errors="*{grade}"></span-->
+        </div>
+        <br>
+        <div class="input-group mb-3">
+            <label for="gender">Gender</label>
+            <input class="form-control" type="text" th:field="*{gender}" id="gender" placeholder="gender" th:value="${student.gender}">
+            <!--span th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}"></span-->
+        </div>
+        <br>
+        <input class="btn btn-primary" type="submit" value="Save Changes">
+    </form>
+</div>
+<footer>
+    <p>Developers Contact: <a href="mailto:logeshwaran29mar@gmail.com">Click here to Mail</a>
+        WhatsApp:+91 9344414138
+    </p>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+        integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
+        crossorigin="anonymous"></script>
+</body>
+</html>
