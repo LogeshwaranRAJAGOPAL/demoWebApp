@@ -6,7 +6,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.annotation.Generated;
 
-@Document(collection = "StudentDataBse")
+//@Document(collection = "StudentDataBse")
 public class Student {
 
 
