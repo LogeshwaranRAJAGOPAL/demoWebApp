@@ -24,7 +24,6 @@
                 <tr>
                     <th>Name</th>
                     <th>Grade</th>
-                    <th>Salary</th>
                     <th>Gender</th>
                     <th>Action</th>
                 </tr>
@@ -33,7 +32,6 @@
                 <tr th:each="student : ${students}">
                     <td th:text="${student.name}">Logesh</td>
                     <td th:text="${student.grade}">10th</td>
-                    <td th:text="${student.salary}">Male</td>
                     <td th:text="${student.gender}"></td>
                     <td>
                         <a th:href="@{'/edit/'+${student.id}}" class="btn btn-primary">Edit</a>

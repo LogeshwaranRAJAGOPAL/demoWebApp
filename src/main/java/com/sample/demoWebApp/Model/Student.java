@@ -1,45 +1,35 @@
 package com.sample.demoWebApp.Model;
 
 
-import javax.persistence.*;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.MongoId;
 
-@Entity
-@Table(name = "StudentDB")
+import javax.annotation.Generated;
+
+@Document("Students")
 public class Student {
 
+    String id;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column
-    Integer id;
-
-    @Column
     String name;
 
-    @Column
     String grade;
 
-    @Column
-    double salary;
-
-    @Column
     String gender;
 
     public Student() {
     }
 
-    public Student(String name, String grade, double salary,String gender) {
+    public Student(String name, String grade, double salary, String gender) {
         this.name = name;
         this.grade = grade;
-        this.salary = salary;
         this.gender = gender;
     }
 
-    public Integer getId() {
-        return id;
-    }
+    public String getId() {return id;}
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -57,14 +47,6 @@ public class Student {
 
     public void setGrade(String grade) {
         this.grade = grade;
-    }
-
-    public double getSalary() {
-        return salary;
-    }
-
-    public void setSalary(double salary) {
-        this.salary = salary;
     }
 
     public String getGender() {

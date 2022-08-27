@@ -42,7 +42,7 @@ public class controller {
     }
 
     @RequestMapping("/edit/{id}")
-    public ModelAndView edit(@PathVariable Integer id)
+    public ModelAndView edit(@PathVariable String id)
     {
         Student student=repo.findById(id).get();
         ModelAndView mv=new ModelAndView("edit");
